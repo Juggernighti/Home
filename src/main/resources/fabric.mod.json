@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "home",
+	"version": "${version}",
+	"name": "home",
+	"description": "A small server mod for teleport points!",
+	"authors": [
+		"Juggernighti"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/home/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"juggernighti.mc.home.ExampleMod",
+			"juggernighti.mc.home.HomeMod"
+		],
+		"client": [
+			"juggernighti.mc.home.ExampleModClient"
+		]
+	},
+	"mixins": [
+		"home.server.mixins.json",
+		{
+			"config": "home.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
